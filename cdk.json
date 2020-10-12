@@ -14,7 +14,7 @@
     "blueprintsBranch": "master",
     "sentryTokenPath": "/all/sentry/ci-token",
     "sentryOrg": "university-of-notre-dame-ts",
-    "sentryProject": "contentful_maps",
+    "sentryProject": "contentful-maps",
     "emailReceivers": "wse-notifications-group@nd.edu"
   }
 }

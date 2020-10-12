@@ -15,4 +15,24 @@ const app = new cdk.App({
 })
 app.node.applyAspect(new StackTags())
 
-new ContentfulMapsStack(app, 'CdkStack')
+const stage = app.node.tryGetContext('stage') || 'dev'
+const sentryProject = app.node.tryGetContext('sentryProject')
+
+let lambdaCodePath = app.node.tryGetContext('lambdaCodePath')
+let sentryVersion = app.node.tryGetContext('sentryVersion')
+if (!lambdaCodePath) {
+  lambdaCodePath = '../contentful_maps/src'
+  sentryVersion = execSync(`cd ${lambdaCodePath} && git rev-parse HEAD`).toString().trim()
+}
+
+if (lambdaCodePath) {
+  const stackName = app.node.tryGetContext('serviceStackName') || `contentfulmaps-${stage}`
+  new ContentfulMapsStack(app, stackName, {
+    stackName,
+    description: 'Transforms content from Contentful for easier consumption by internal other apps/services.',
+    stage,
+    lambdaCodePath,
+    sentryProject,
+    sentryVersion,
+  })
+}
