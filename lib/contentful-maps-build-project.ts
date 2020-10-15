@@ -65,7 +65,7 @@ export default class ContentfulMapsBuildProject extends codebuild.PipelineProjec
         phases: {
           install: {
             'runtime-versions': {
-              python: '3.x',
+              nodejs: '12.x',
             },
             commands: [
               'echo "Ensure that the codebuild directory is executable"',
