@@ -72,5 +72,12 @@ export default class ContentfulMapsStack extends cdk.Stack {
       },
     }
     mapResource.addMethod('GET', new LambdaIntegration(mapQueryLambda, integrationOptions), methodOptions)
+
+    // Output API url to ssm so we can import it in the QA project
+    new StringParameter(this, 'OracleLayerVersionParameter', {
+      parameterName: `${paramStorePath}/api-url`,
+      description: 'Path to root of the API gateway.',
+      stringValue: api.url,
+    })
   }
 }
