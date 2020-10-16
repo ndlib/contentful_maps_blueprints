@@ -27,13 +27,13 @@ export class ContentfulMapsQaProject extends PipelineProject {
           install: {
             commands: [
               'echo "Ensure that the Newman spec is readable"',
-              'chmod -R 755 ./scripts/codebuild/tests/postman/*',
+              'chmod -R 755 ./tests/postman/*',
             ],
           },
           build: {
             commands: [
               'echo "Beginning tests at `date`"',
-              `newman run ./scripts/codebuild/tests/postman/qa_collection.json --env-var contentfulMapsApiUrl=$API_URL`,
+              `newman run ./tests/postman/qa_collection.json --env-var contentfulMapsApiUrl=$API_URL`,
             ],
           },
         },
