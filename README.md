@@ -8,3 +8,11 @@ Infrastructure-as-code for the Hesburgh Libraries [contentful_maps service](http
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk synth`       emits the synthesized CloudFormation template
+
+## Dependencies
+ * [contentful-direct](https://github.com/ndlib/contentful_direct_blueprints)
+
+## Deployment
+```
+cdk deploy contentfulmaps-pipeline
+```
