@@ -11,7 +11,7 @@
     "serviceRepository": "contentful_maps",
     "serviceBranch": "master",
     "blueprintsRepository": "contentful_maps_blueprints",
-    "blueprintsBranch": "master",
+    "blueprintsBranch": "main",
     "sentryTokenPath": "/all/sentry/ci-token",
     "sentryOrg": "university-of-notre-dame-ts",
     "sentryProject": "contentful-maps",
