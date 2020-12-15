@@ -14,5 +14,5 @@ Infrastructure-as-code for the Hesburgh Libraries [contentful_maps service](http
 
 ## Deployment
 ```
-cdk deploy contentfulmaps-pipeline
+cdk deploy contentfulmaps-pipeline -c slackNotifyStackName=slack-approval-bot-wse-notifier
 ```
